@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17-Jul-2022 às 04:35
+-- Tempo de geração: 17-Jul-2022 às 16:00
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 7.4.29
 
@@ -37,7 +37,7 @@ CREATE TABLE `usuario` (
   `nomepai` varchar(25) DEFAULT NULL,
   `datacadastro` date DEFAULT current_timestamp(),
   `email` varchar(12) NOT NULL,
-  `senha` varchar(15) NOT NULL
+  `senha` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -46,7 +46,8 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`id`, `nome`, `cpf`, `rg`, `datanasc`, `nomemae`, `nomepai`, `datacadastro`, `email`, `senha`) VALUES
 (1, 'admin', 72053588098, 451343414, '1996-06-15', 'teste mae', 'teste pai', '2022-07-15', 'admin@teste.', '$2y$10$S70iGxqy'),
-(3, 'teste2', 22222222222, 222222222222, '2005-02-01', 'tster', 'ereterg', '2022-07-16', 'teste3@teste', 'e10adc3949ba59a');
+(4, 'teste234cnd', 1234567890, 2345677890, '2022-07-02', 'sdgh', 'sfhsjh', '2022-07-17', 'teste@tesert', '8b1606f0ddf3241442d4a1337'),
+(6, 'teste23434', 5702649350, 2007344636, '2014-03-05', 'tstere', 'ereterges', '2022-07-17', 'admin245@tes', '163c1f2ecb525ea');
 
 --
 -- Índices para tabelas despejadas
@@ -68,7 +69,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

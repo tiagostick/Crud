@@ -17,13 +17,12 @@ switch ($_REQUEST["acao"]) {
         $sql = "INSERT INTO usuario (nome, cpf, rg, datanasc, nomemae, nomepai, email, senha)
         VALUES ('{$nome}','{$cpf}','{$rg}','{$datanasc}','{$nomemae}','{$nomepai}','{$email}','{$senha}')";
         $res = $connect->query($sql);
-
         if($res==true){
             print "<script>alert('Cadastro feito com sucesso');</script>";
-            print "<script>location.href='page=listar';</script>";
+            print "<script>location.href='?page=listar';</script>";
         }else {
             print "<script>alert('Erro ao cadastrar');</script>";
-            print "<script>location.href='page=listar';</script>";
+            print "<script>location.href='?page=listar';</script>";
         }
         break;
     case 'editar':
@@ -36,18 +35,9 @@ switch ($_REQUEST["acao"]) {
         $email=$_POST["email"];
         $senha=md5($_POST["senha"]);
 
-        $sql = "UPDATE usuario SET 
-            nome='{$nome}', 
-            cpf='{$cpf}', 
-            rg='{$rg}', 
-            datanasc='{$datanasc}', 
-            nomemae='{$nomemae}', 
-            nomepai='{$nomepai}', 
-            email='{$email}', 
-            senha='{$senha}'
-            WHERE id=".$_REQUEST["id"];
-
-        die();
+        $sql = "UPDATE usuario SET nome='{$nome}', cpf='{$cpf}', rg='{$rg}', datanasc='{$datanasc}', nomemae='{$nomemae}', 
+            nomepai='{$nomepai}', email='{$email}', senha='{$senha}' WHERE id=".$_REQUEST["id"];
+        $res= $connect->query($sql);
         if($res==true){
             print "<script>alert('Editado com sucesso');</script>";
             print "<script>location.href='?page=listarusuarios';</script>";

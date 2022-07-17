@@ -1,11 +1,12 @@
 <?php
 include_once 'connect.php';
+include_once 'index.php';
 ?>
  <h1>Busca de Usuario</h1>
  <table class='table table-hover table-bordered'>
                 <tbody>
                     <?php
-                    $pesquisar=$_GET["pesquisar"];
+                    $pesquisar=$_POST["pesquisar"];
                     $query = "SELECT * FROM  usuario WHERE nome LIKE '%$pesquisar%'";
                     $res = $connect->query($query);
                     $qtd=$res->num_rows;

@@ -7,10 +7,8 @@ include_once 'connect.php';
     $sql= "SELECT * FROM usuario WHERE id=".$_REQUEST["id"];
     $res= $connect->query($sql);
     $row = $res->fetch_object();
-
-
 ?>
- <form action="?page=salvar" method="post">
+ <form action="?page=salvar&acao=editar" method="post">
      <input type="hidden" name="acao" value="editar">
      <input type="hidden" name="id" value="<?php print $row->id;?>">
            <h3>Nome</h3>

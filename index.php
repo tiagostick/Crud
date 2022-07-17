@@ -29,12 +29,12 @@ include_once 'connect.php';
         </li>
       </ul>
 
-      <form class="d-flex" role="search"  method="GET" action="consultar.php">
+      <form class="d-flex" role="search"  method="POST" action="consultar.php">
         <input class="form-control me-2" type="text" name="consultar" placeholder="Digite RG ou CPF" aria-label="Search">
         <button class="btn btn-outline-success" type="submit"  href="?page=consultar">Consultar</button>
       </form>
 
-      <form class="d-flex" role="search" method="GET" action="pesquisar.php" >
+      <form class="d-flex" role="search" method="POST" action="pesquisar.php" >
         <input class="form-control me-2" type="text" name="pesquisar" placeholder="Buscar usuário por nome" aria-label="Search">
         <button class="btn btn-outline-success" type="submit" href="?page=pesquisar">Pesquisar</button>
       </form>
@@ -63,7 +63,7 @@ include_once 'connect.php';
               include("consultar.php");
               break;            
             default:
-            print "<h1>Bem vindo</h1>";
+            print "<h1></h1>";
         }
     ?>
 

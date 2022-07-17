@@ -1,11 +1,12 @@
 <?php
 include_once 'connect.php';
+include_once 'index.php';
 ?>
  <h1>Consulta de Usuario</h1>
  <table class='table table-hover table-bordered'>
                 <tbody>
                     <?php
-                    $consultar=$_GET["consultar"];
+                    $consultar=$_POST["consultar"];
                     $query = "SELECT * FROM  usuario WHERE cpf='$consultar' OR rg='$consultar'";
                     $res = $connect->query($query);
                     $qtd=$res->num_rows;
